@@ -1,27 +1,32 @@
-# NgTmdb
+# Movie Database Search
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.4.
+## Requirements
 
-## Development server
+-    Submits search text to https://developers.themoviedb.org/3 and returns the name, year and description of anything that matches that text
+-   Takes the movie description and submits that to a Yoda translator -  https://funtranslations.com/api/yoda
+-   The application should show the relevant movie information with the translation of the movie’s description passed through the Yoda Translator.
+-   Please include a README.md
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Installation
 
-## Code scaffolding
+Install node.js: [https://nodejs.org/en/](https://nodejs.org/en/)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Run `npm install` to setup the application.
 
-## Build
+## Serve
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Run `ng serve` to serve the project in a new browser window.
 
-## Running unit tests
+## Search Component
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+The search compoennt performs a movie search on the movie database API. It will return Movies. 
 
-## Running end-to-end tests
+## Translation
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+The Yoda translation will only run 5 results per hour.
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Future work
+- The search component exapnded out to take in multi search which supports searching for movies, tv shows and people in a single request.
+- The translation to return the original description when you have hit your limit of 5 result per hour.
+- Validation checks on the input.
+- Improve the CSS
