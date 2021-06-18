@@ -30,3 +30,4 @@ The Yoda translation will only run 5 results per hour.
 - The translation to return the original description when you have hit your limit of 5 result per hour.
 - Validation checks on the input.
 - Improve the CSS
+- Fix the error when calling the Yoda translation API. Supposed to be POST not GET.
