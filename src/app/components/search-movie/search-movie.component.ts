@@ -12,6 +12,7 @@ export class SearchMovieComponent implements OnInit {
   searchForm: FormGroup;
   result: any = [];
   translatedDescription: string;
+  originalDescription: string;
 
   constructor(private fb: FormBuilder, 
               private movie: MovieService) { }
@@ -30,10 +31,15 @@ export class SearchMovieComponent implements OnInit {
     this.movie.getMovie(this.searchForm.value.search).subscribe(data => {
       this.result = data.results;
       for( let i=0; i<data.results.length; i++){
-        this.movie.translateDescription(data.results[i].overview).subscribe(translatedText => {
-          this.translatedDescription = translatedText.contents.translated;
+        this.movie.translateDescription({ text: data.results[i].overview })
+        .then((res) => {
+            this.translatedDescription = res.contents.translated;
+        })
+        .catch((error) => {
+            this.translatedDescription = data.results[i].overview;
         });
       }
     })
   }
 }
+

@@ -1,0 +1,7 @@
+{
+    "/translate/*": {
+        "target": "https://api.funtranslations.com",
+        "secure": false,
+        "changeOrigin": true
+    }
+}

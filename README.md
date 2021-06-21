@@ -26,8 +26,8 @@ The search compoennt performs a movie search on the movie database API. It will 
 The Yoda translation will only run 5 results per hour.
 
 ## Future work
-- The search component exapnded out to take in multi search which supports searching for movies, tv shows and people in a single request.
-- The translation to return the original description when you have hit your limit of 5 result per hour.
-- Validation checks on the input.
-- Improve the CSS
-- Fix the error when calling the Yoda translation API. Supposed to be POST not GET.
+- [ ] The search component exapnded out to take in multi search which supports searching for movies, tv shows and people in a single request.
+- [x] Fix the error when calling the Yoda translation API. Supposed to be POST not GET. - Completed 21/06/2021
+- [x] The translation to return the original description when you have hit your limit of 5 result per hour. - Completed 21/06/2021
+- [ ] Validation checks on the input.
+- [ ] Improve the CSS
