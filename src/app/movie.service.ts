@@ -1,6 +1,21 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
-import { Observable, throwError } from 'rxjs';
+import { Observable } from 'rxjs';
+
+/**
+ * Used an observble which mean they'll takes in streams of data
+ * but then will emits bit when it is call upon. Subscribing to an observable
+ * is needed to "wake" the observable up otherwise it will just sit and store the data
+ * until called upon. Observable doesn't care and will only get the information out
+ * when it has been subscribed to.
+ * 
+ * Used a promise as it produces a single value asychrnously.
+ * Data goes in and sigle value is emited and use. Straightforward way
+ * to handle incoming data.
+ * 
+ * A callback function has been used in a promise as once the promise get resolved
+ * the subscription listens to it and will send information as soon as it comes through. 
+ */
 
 export interface Movie {
   // Properties
@@ -36,7 +51,7 @@ export class MovieService {
      */
     translateDescription(params: object): Promise<any> {
       return new Promise ((resolve, reject) => 
-      { this.http.post(`${this.yodaApi}`, params,).subscribe((res: any) => {
+      { this.http.post(`${this.yodaApi}`, params).subscribe((res: any) => {
         resolve(res);
     },
       error => {
@@ -44,4 +59,5 @@ export class MovieService {
       });
     });
   }
+
 }
